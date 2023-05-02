@@ -18,7 +18,7 @@ terraform {
     organization = "DevopsFiap"
 
     workspaces {
-      name = "learn-terraform-github-actions"
+      name = "gh-actions"
     }
   }
 }
