@@ -58,7 +58,7 @@ resource "aws_instance" "web" {
               echo "<p style="text-align:center"><b>FIAP - POS TECH!!!</b></p>" > /var/www/html/index.html
               systemctl restart apache2
               EOF
-  }
+}
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
