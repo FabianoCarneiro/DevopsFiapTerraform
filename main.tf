@@ -77,9 +77,6 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-provider "aws" {
-  region = "us-east-1" # Substitua pela região desejada
-}
 
 resource "aws_iam_user" "new_user" {
   name = "example_user" # Nome do novo usuário
