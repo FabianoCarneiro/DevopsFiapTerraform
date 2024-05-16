@@ -77,6 +77,31 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+provider "aws" {
+  region = "us-east-1" # Substitua pela região desejada
+}
+
+resource "aws_iam_user" "new_user" {
+  name = "example_user" # Nome do novo usuário
+
+  tags = {
+    Name = "Example User"
+  }
+}
+
+resource "aws_iam_access_key" "new_user_access_key" {
+  user = aws_iam_user.new_user.name
+
+  # Garanta que as chaves de acesso sejam geradas apenas uma vez
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_iam_user_policy_attachment" "new_user_policy_attachment" {
+  user       = aws_iam_user.new_user.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess" # Política de exemplo (permissão de acesso total ao Amazon S3)
+}
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
