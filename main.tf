@@ -77,11 +77,12 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
 resource "aws_iam_user" "new_user" {
-  name = "Usuario Imoacta" # Nome do novo usuário
+  name = "Usuario Impacta" # Nome do novo usuário
 
   tags = {
-    Name = "AS 07"
+    Name = "AS07"
   }
 }
 
