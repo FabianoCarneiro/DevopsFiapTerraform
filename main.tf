@@ -79,7 +79,7 @@ resource "aws_security_group" "web-sg" {
 }
 
 resource "aws_iam_user" "new_user" {
-  name = "User Fiap" # Nome do novo usuário
+  name = "User_Fiap" # Nome do novo usuário
 
   tags = {
     Name = "Example User"
