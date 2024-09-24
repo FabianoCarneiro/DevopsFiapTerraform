@@ -56,7 +56,7 @@ resource "aws_instance" "web" {
               apt-get update
               apt-get install -y apache2
               sed -i -e 's/80/8080/' /etc/apache2/ports.conf
-              echo "<style> body {background-color: blue;}</style><img src="https://postech.fiap.com.br/imgs/fiap-plus-alura/fiap_alura.png">" > /var/www/html/index.html
+              echo "<style> body {background-color: black;}</style><img src="https://postech.fiap.com.br/imgs/fiap-plus-alura/fiap_alura.png">" > /var/www/html/index.html
               systemctl restart apache2
               EOF
 }
@@ -79,7 +79,7 @@ resource "aws_security_group" "web-sg" {
 }
 
 resource "aws_iam_user" "new_user" {
-  name = "example_user" # Nome do novo usuário
+  name = "User Fiap" # Nome do novo usuário
 
   tags = {
     Name = "Example User"
