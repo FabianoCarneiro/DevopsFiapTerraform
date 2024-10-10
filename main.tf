@@ -1,6 +1,5 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
-# Fiap MBA SCJ
 
 terraform {
   required_providers {
