@@ -79,10 +79,10 @@ resource "aws_security_group" "web-sg" {
 
 resource "aws_iam_user" "new_user" {
 
-  name = "Usuario_Impacta_Full09" # Nome do novo usuário
+  name = "Usuario_Impacta_ES08" # Nome do novo usuário
 
   tags = {
-    Name = "FULL09"
+    Name = "ES08"
   }
 }
 
