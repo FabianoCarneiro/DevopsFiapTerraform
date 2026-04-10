@@ -50,7 +50,7 @@ jobs:
         run: terraform plan -no-color -input=false
 
       - name: Update Pull Request
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         if: github.event_name == 'pull_request'
         env:
           PLAN: ${{ steps.plan.outputs.stdout }}
